@@ -7,8 +7,9 @@
       <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1" style="width:339.984;height:245.531px;">
         <div class="thumbnail text-center" style="font-size:15px">
             <div class="caption">
-                <div class="timer" data-countdown="2021/01/01"></div>
+                <div class="timer" data-countdown="2021-03-17 21:00"  style="background-color:rgb(26, 188, 156);opacity:0.8;"></div>
             </div>
+
 
                 <div class="caption timer-title " style="background-color:rgb(26, 188, 156);opacity:0.8;">
                    <p>Mr. Robot</p>
@@ -33,14 +34,14 @@
      <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2" style="width:339.984;height:245.531px;">
        <div class="thumbnail text-center" style="font-size:15px">
            <div class="caption">
-               <div class="timer" data-countdown="2021/01/01"></div>
+               <div data-countdown="2021/01/01" style="background-color:rgb(26, 188, 156);opacity:0.8;"></div>
            </div>
            <div class="caption">
 
            </div>
        </div>
        <div class="thumbnail text-center" style="font-size:15px">
-        <div class="caption timer-title ">
+        <div class="caption timer-title "  style="background-color:rgb(26, 188, 156);opacity:0.8;">
            <p>Money Heist</p>
         </div>
 
