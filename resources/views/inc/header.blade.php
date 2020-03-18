@@ -3,7 +3,7 @@
     <div class="container d-flex align-items-center flex-column">
 
       <!-- Masthead Avatar Image -->
-      <img class="masthead-avatar mb-5" src="{{ asset('img/avataaars.svg') }}" alt="">
+      <img class="masthead-avatar mb-5" src="{{ asset('img/hourglass.png') }}" alt="">
 
       <!-- Masthead Heading -->
       <h1 class="masthead-heading text-uppercase mb-0">Epic Countdown</h1>
