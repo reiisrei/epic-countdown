@@ -2,30 +2,21 @@
     @foreach ($countdown as $count)
     <!-- Portfolio Item {{ $count->id }} -->
     <div class="col-md-6 col-lg-4">
-
-
          <!-- Countdown Timer -->
     <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#Modal{{ $count->id }}" style="width:339.984;height:245.531px;">
         <div class="thumbnail text-center" style="font-size:15px">
             <div class="caption">
-
-            <div class="timer" data-countdown="{{ $count->date }} {{$count->time}}"  style="background-color:rgb(26, 188, 156);opacity:0.8;"></div>
+                <div class="timer" data-countdown="{{ $count->date }} {{$count->time}}"  style="background-color:rgb(26, 188, 156);opacity:0.8;"></div>
             </div>
-
-
             <div class="caption timer-title " style="background-color:rgb(26, 188, 156);opacity:0.8;">
-            <p>{{$count->title}}</p>
-             </div>
-
-
+                <p>{{$count->title}}</p>
+            </div>
         </div>
          <!-- -->
-
         <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
           <div class="portfolio-item-caption-content text-center text-white">
             <i class="fas fa-plus fa-3x"></i>
-          </div>
-
+        </div>
         </div>
         <img class="img-fluid" src="{{ $count->picture }}" alt="">
       </div>

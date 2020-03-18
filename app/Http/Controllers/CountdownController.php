@@ -9,7 +9,7 @@ class CountdownController extends Controller
     public function index(){
 
         //fetch all todos from database
-        $countdown = Countdown::all();
+        $countdown = Countdown::paginate(6);
         //display them in the todos.index page
         return view('index')->with('countdown', $countdown);
     }
