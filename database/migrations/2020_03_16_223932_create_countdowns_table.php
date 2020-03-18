@@ -15,9 +15,17 @@ class CreateCountdownsTable extends Migration
     {
         Schema::create('countdowns', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('user_id');
             $table->string('title');
-            $table->string('date');
-            $table->string('time');
+            $table->string('subtitle')->nullable();
+            $table->mediumText('description');
+            $table->string('completion_text');
+            $table->date('date');
+            $table->time('time');
+            $table->string('timezone');
+            $table->boolean('unconfirmed_flag');
+            $table->string('picture');
+            $table->boolean('status');
             $table->timestamps();
         });
     }
