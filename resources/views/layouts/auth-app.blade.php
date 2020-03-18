@@ -5,7 +5,7 @@
     @include('inc.nav')
 
            @yield('content')
-
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     @include('inc.footer')
 
 

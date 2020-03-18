@@ -13,25 +13,30 @@ class CountdownController extends Controller
         //display them in the todos.index page
         return view('index')->with('countdown', $countdown);
     }
-    // public  function store(){
 
-    //     $this->validate(request(), [
+    public  function store(){
 
-    //         'name' => ' required|min:6|max:10',
-    //         'description' => 'required'
-    //     ]);
+        // $this->validate(request(), [
 
-    //     $data = request()->all();
+        //     'name' => ' required|min:6|max:10',
+        //     'description' => 'required'
+        // ]);
 
-    //     $todo = new Todo();
+        $data = request()->all();
 
-    //     $todo->name = $data['name'];
-    //     $todo->description = $data['description'];
-    //     $todo->completed = false;
+        $countdown = new Countdown();
 
-    //     $todo->save();
+        $countdown->title = $data['title'];
+        $countdown->subtitle = $data['subtitle'];
+        $countdown->description = $data['description'];
+        $countdown->date = $data['date'];
+        $countdown->completion_text = $data['completion_text'];
+        $countdown->unconfirmed_flag = $data['unconfirmed_flag'];
+        $countdown->picture = $data['picture'];
 
-    //     session()->flash('success', 'Todo created successfully');
-    //     return redirect('/dashboard');
-    // }
+        $countdown->save();
+
+        session()->flash('success', 'Countdown created successfully');
+        return redirect('/dashboard');
+    }
 }

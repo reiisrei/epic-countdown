@@ -17,9 +17,9 @@ Route::get('/', function () {
 
 Route::get('/', 'CountdownController@index');
 
-Route::get('epic/{epic}', 'CountdownController@show');
+Route::get('epic/{epic}', 'CountdownController@show'); //show individual countdown
 
-Route::get('new-epic', 'CountdownController@create');
+Route::get('new-epic', 'CountdownController@create'); //show create page countdown
 Route::post('store-epic', 'CountdownController@store');
 Route::get('epic/{epic}/edit', 'CountdownController@edit');
 Route::post('epic/{epic}/update-epic', 'CountdownController@update');
