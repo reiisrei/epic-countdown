@@ -56,7 +56,7 @@
                     <!-- Portfolio Modal - Image -->
                     <img class="img-fluid rounded mb-5" src="{{ asset('img/portfolio/cabin.png') }}" alt="">
                     <!-- Portfolio Modal - Text -->
-                    <p class="mb-5">{{ $count->title }}</p>
+                    <p class="mb-5">{{ $count->description }}</p>
                     <button class="btn btn-primary" href="#" data-dismiss="modal">
                       <i class="fas fa-times fa-fw"></i>
                       Close Window
