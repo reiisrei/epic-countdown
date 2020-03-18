@@ -13,12 +13,20 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
             @if (!Request::is('/'))
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/">POPULAR</a>
+
+            <li class="nav-item mx-0 " >
+                <a onclick="openPage('my-account', this)" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" id="defaultOpen" style="cursor: pointer;">My Account</a>
             </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/">Ending Soon</a>
+            <li class="nav-item mx-0 ">
+                <a onclick="openPage('my-wall', this)" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" style="cursor: pointer;">My Wall</a>
             </li>
+            <li class="nav-item mx-0 ">
+                <a onclick="openPage('my-countdown', this)" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" style="cursor: pointer;">My Countdown</a>
+            </li>
+            <li class="nav-item mx-0 ">
+                <a onclick="openPage('create-countdown', this)" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" style="cursor: pointer;">Create Countdown</a>
+            </li>
+
             @else
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#popular">POPULAR</a>
@@ -43,6 +51,8 @@
                </a>
 
                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a href="/dashboard" class="dropdown-item">DASHBOARD</a>
+                    <hr>
                    <a class="dropdown-item " href="{{ route('logout') }}"
                       onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">

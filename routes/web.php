@@ -32,5 +32,5 @@ Route::get('test', 'CountdownController@test');
 Auth::routes();
 
 
-Route::get('/home', 'HomeController@index')->name('home'); //eto yung homepage ng user palitan mo lagyan mo ng user controller
+Route::get('/dashboard', 'HomeController@index')->name('dashboard'); //eto yung homepage ng user palitan mo lagyan mo ng user controller
 
