@@ -8,6 +8,7 @@
     <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#Modal{{ $count->id }}" style="width:339.984;height:245.531px;">
         <div class="thumbnail text-center" style="font-size:15px">
             <div class="caption">
+
             <div class="timer" data-countdown="{{ $count->date }} {{$count->time}}"  style="background-color:rgb(26, 188, 156);opacity:0.8;"></div>
             </div>
 

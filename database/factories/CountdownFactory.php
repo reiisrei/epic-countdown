@@ -12,7 +12,7 @@ $factory->define(Countdown::class, function (Faker $faker) {
         'subtitle' => $faker->lastName(),
         'description' => $faker->paragraph(),
         'completion_text' => $faker->word(),
-        // 'date' => $faker->dateTimeBetween('Y-m-d','+0 days', '+2 years'),
+
         'date' => $faker->date('Y-m-d', '+100 years'),
         'time' => $faker->time(),
         'timezone' => $faker->timezone(),
