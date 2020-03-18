@@ -17,7 +17,7 @@ $factory->define(Countdown::class, function (Faker $faker) {
         'time' => $faker->time(),
         'timezone' => $faker->timezone(),
         'unconfirmed_flag' => $faker->boolean(),
-        'picture' => $faker->word(),
+        'picture' => $faker->imageUrl($width = 640, $height = 480),
         'status' => $faker->boolean(),
     ];
 });

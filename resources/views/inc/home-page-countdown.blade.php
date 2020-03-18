@@ -1,6 +1,6 @@
 <div class="row">
     @foreach ($countdown as $count)
-    <!-- Portfolio Item 1 -->
+    <!-- Portfolio Item {{ $count->id }} -->
     <div class="col-md-6 col-lg-4">
 
 
@@ -26,11 +26,11 @@
           </div>
 
         </div>
-        <img class="img-fluid" src="https://m.media-amazon.com/images/M/MV5BMzgxMmQxZjQtNDdmMC00MjRlLTk1MDEtZDcwNTdmOTg0YzA2XkEyXkFqcGdeQXVyMzQ2MDI5NjU@._V1_SY1000_CR0,0,666,1000_AL_.jpg" alt="">
+        <img class="img-fluid" src="{{ $count->picture }}" alt="">
       </div>
     </div>
 
-     <!-- Portfolio Modal 1 -->
+     <!-- Portfolio Modal {{ $count->id }} -->
      <div class="portfolio-modal modal fade" id="Modal{{ $count->id }}" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document">
           <div class="modal-content">
@@ -54,7 +54,7 @@
                       <div class="divider-custom-line"></div>
                     </div>
                     <!-- Portfolio Modal - Image -->
-                    <img class="img-fluid rounded mb-5" src="{{ asset('img/portfolio/cabin.png') }}" alt="">
+                    <img class="img-fluid rounded mb-5" src="{{ $count->picture }}" alt="">
                     <!-- Portfolio Modal - Text -->
                     <p class="mb-5">{{ $count->description }}</p>
                     <button class="btn btn-primary" href="#" data-dismiss="modal">
