@@ -65,11 +65,11 @@
 <script type="text/javascript">
     $(function () {
         $('#datetimepicker13').datetimepicker({
+            showClose: true,
             inline: true,
             sideBySide: true,
             format: 'YYYY/MM/DD HH:mm',
-            minDate: new Date()
-
+            minDate: new Date().setHours(0,0,0,0),
         });
     });
 </script>
