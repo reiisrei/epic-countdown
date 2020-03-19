@@ -18,7 +18,7 @@
             <i class="fas fa-plus fa-3x"></i>
         </div>
         </div>
-        <img class="img-fluid" src="{{ $count->picture }}" alt="">
+        <img class="img-fluid" src="/storage/images/{{ $count->picture }}" alt="">
       </div>
     </div>
 
@@ -46,7 +46,7 @@
                       <div class="divider-custom-line"></div>
                     </div>
                     <!-- Portfolio Modal - Image -->
-                    <img class="img-fluid rounded mb-5" src="{{ $count->picture }}" alt="">
+                    <img class="img-fluid rounded mb-5" src="/storage/images/{{ $count->picture }}" alt="">
                     <!-- Portfolio Modal - Text -->
                     <p class="mb-5">{{ $count->description }}</p>
                     <button class="btn btn-primary" href="#" data-dismiss="modal">

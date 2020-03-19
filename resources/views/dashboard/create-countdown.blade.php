@@ -19,7 +19,7 @@
                     </ul>
                 </div>
                 @endif
-                <form action="/store-epic" method="POST">
+                <form action="/store-epic" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Title" name="title">
