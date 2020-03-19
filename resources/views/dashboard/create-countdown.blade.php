@@ -43,9 +43,11 @@
                             <input type="text" class="form-control" placeholder="Completion Text" name="completion_text">
                         </div>
                         <div class="form-group">
-                            <div class="checkbox">
-                                <label><input type="checkbox" value="1" name="unconfirmed_flag"> Unconfirmed Flag</label>
-                            </div>
+                            <span><h6>Unconfirmed flag</h6></span>
+                            <label class="switch">
+                                <input type="checkbox" value="1" name="unconfirmed_flag">
+                                <span class="slider"></span>
+                              </label>
                         </div>
 
                         <div class="form-group">
