@@ -67,7 +67,9 @@
         $('#datetimepicker13').datetimepicker({
             inline: true,
             sideBySide: true,
-            format: 'YYYY/MM/DD HH:mm'
+            format: 'YYYY/MM/DD HH:mm',
+            minDate: new Date()
+
         });
     });
 </script>
