@@ -3,9 +3,11 @@
     @include('inc.head')
 <body>
     @include('inc.nav')
+<div class="container" >
+    @yield('content')
+</div>
 
-           @yield('content')
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
     @include('inc.footer')
 
 
