@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Countdown;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class CountdownController extends Controller
 {
@@ -52,7 +53,7 @@ class CountdownController extends Controller
 
         $countdown->save();
 
-        session()->flash('success', 'Countdown created successfully');
-        return redirect('/dashboard');
+        Session::flash('success', 'Post created successfully');
+        return redirect()->back();
     }
 }

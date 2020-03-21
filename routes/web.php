@@ -35,6 +35,11 @@ Auth::routes();
 
 Route::get('/dashboard', 'HomeController@index')->name('dashboard'); //eto yung homepage ng user palitan mo lagyan mo ng user controller
 
-Route::get('/admin', 'AdminController@admin')
-    ->middleware('is_admin')
-    ->name('admin');
+// Route::get('/admin', 'AdminController@admin')
+//     ->middleware('is_admin')
+//     ->name('admin');
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
