@@ -13,8 +13,7 @@ $factory->define(Countdown::class, function (Faker $faker) {
         'description' => $faker->paragraph(),
         'completion_text' => $faker->word(),
 
-        'date' => $faker->date('Y-m-d', '+100 years'),
-        'time' => $faker->time(),
+        'date' => $faker->dateTime('Y-m-d', '+100 years'),
         'timezone' => $faker->timezone(),
         'unconfirmed_flag' => $faker->boolean(),
         'picture' => $faker->imageUrl($width = 640, $height = 480),
