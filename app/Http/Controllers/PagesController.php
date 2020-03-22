@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Category;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -40,6 +40,6 @@ class PagesController extends Controller
     }
     public function CreateCountdown()
     {
-        return view('dashboard.create-countdown');
+        return view('dashboard.create-countdown')->with('category', Category::all());
     }
 }

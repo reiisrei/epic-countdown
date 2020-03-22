@@ -53,7 +53,7 @@
                </a>
 
                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a href="{{ route('user.dashboard') }}" class="dropdown-item">DASHBOARD</a>
+                    <a href="{{ route('user.wall') }}" class="dropdown-item">DASHBOARD</a>
                     <hr>
                    <a class="dropdown-item " href="{{ route('logout') }}"
                       onclick="event.preventDefault();

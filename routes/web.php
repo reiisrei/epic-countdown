@@ -14,8 +14,6 @@ include_once('custom/user_routes.php');
 
 
 
-Route::get('/', 'CountdownController@index');
-
 
 Auth::routes();
 
