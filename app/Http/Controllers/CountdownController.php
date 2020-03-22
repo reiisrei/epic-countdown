@@ -9,13 +9,15 @@ class CountdownController extends Controller
 {
     public function index(){
 
-        //fetch all todos from database
         $countdown = Countdown::paginate(6);
-        //display them in the todos.index page
-        // dd($countdown);
+
         return view('index')->with('countdown', $countdown);
     }
 
+    public function create(){
+
+        return view('dashboard.create-countdown');
+    }
     public  function store(Request $request){
 
         // $this->validate(request(), [
