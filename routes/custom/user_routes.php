@@ -12,6 +12,8 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('/my-countdown/{id}', 'PagesController@MyCountdown')->name('user.countdown');
     Route::get('/create-countdown/{id}', 'PagesController@CreateCountdown')->name('create.countdown');
 });
+Route::get('/popular', 'CountdownController@popular')->name('popular');
+Route::get('/ending', 'CountdownController@ending')->name('ending');
 Route::get('/', 'CountdownController@index')->name('index');
 ?>
 

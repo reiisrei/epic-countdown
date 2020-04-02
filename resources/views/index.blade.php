@@ -28,7 +28,7 @@ Epic Countdown
       @include('inc.home-page-countdown')
 
       <div class="text-center mt-4">
-        <a class="btn btn-xl btn-outline-dark" href="https://startbootstrap.com/themes/freelancer/">
+      <a class="btn btn-xl btn-outline-dark" href="{{ route('popular') }}">
           <i class="fas fa-chevron-circle-down mr-2"></i>
           See More
         </a>
@@ -55,7 +55,7 @@ Epic Countdown
       <!-- Portfolio Grid Items -->
       @include('inc.home-page-countdown')
       <div class="text-center mt-4">
-        <a class="btn btn-xl btn-outline-dark" href="https://startbootstrap.com/themes/freelancer/">
+        <a class="btn btn-xl btn-outline-dark" href="{{ route('ending') }}">
           <i class="fas fa-chevron-circle-down mr-2"></i>
           See More
         </a>

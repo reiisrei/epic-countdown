@@ -17,6 +17,22 @@ class CountdownController extends Controller
        // return print_r(get_class_vars('CountdownController'));
     }
 
+    public function popular(){
+
+        $countdown = Countdown::all();
+
+        return view('popular')->with('countdown', $countdown);
+       // return print_r(get_class_vars('CountdownController'));
+    }
+
+    public function ending(){
+
+        $countdown = Countdown::all();
+
+        return view('ending')->with('countdown', $countdown);
+       // return print_r(get_class_vars('CountdownController'));
+    }
+
     public function create(){
 
         return view('dashboard.create-countdown');

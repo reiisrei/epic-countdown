@@ -12,31 +12,25 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-            @if (!Request::is('/'))
+        @if (!Request::is('/') )
+        <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger {{Route::is('popular') ? 'active' : ''}}" href="/popular">POPULAR</a>
+        </li>
+        <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger {{Route::is('ending') ? 'active' : ''}}" href="/ending">Ending Soon</a>
+        </li>
+        @else
 
-            <li class="nav-item mx-0 " >
-                <a  class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('user.account', $user->id) }}">My Account</a>
-            </li>
-            <li class="nav-item mx-0 ">
-                <a  class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('user.wall') }}">My Wall</a>
+        <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#popular">POPULAR</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#ending">Ending Soon</a>
+          </li>
 
-            </li>
-            <li class="nav-item mx-0 ">
-                <a  class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('user.countdown') }}">My Countdown</a>
+        @endif
 
-            </li>
-            <li class="nav-item mx-0 ">
-                <a  class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('create.countdown') }}">Create Countdown</a>
-            </li>
 
-            @else
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#popular">POPULAR</a>
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#ending">Ending Soon</a>
-            </li>
-            @endif
           @guest
           <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#signup">Login/Register</a>
