@@ -7,6 +7,17 @@
     <div class="card-body" style="text-align:center;"><h1>{{ strtoupper( Auth::user()->name) }}'S ACCOUNT SETTINGS</h1></div>
 </div>
 <br>
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul class="list-group">
+            @foreach ($errors->all() as $error)
+            <li class="list-group-item">
+                {{ $error }}
+            </li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
 <form action="{{ route('user.update', ['id' => $user->id]) }}" method="POST">
 <div class="row justify-content-center">
     <div class="col-md-12">

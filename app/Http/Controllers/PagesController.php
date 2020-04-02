@@ -52,6 +52,13 @@ class PagesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate(request(), [
+
+            'name' => ' required',
+            'email' => 'required',
+
+        ]);
+
         $user = User::find($id);
 
         $user->name = $request->name;
