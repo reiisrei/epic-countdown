@@ -21,7 +21,7 @@
                         <input type="text" class="form-control" placeholder="Email" name="email" value="{{ $user->email }}">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Password" name="password" value="">
+                        <input type="password" class="form-control" placeholder="Password" name="password" value="">
                     </div>
 
                     <div class="form-group text-center">
@@ -34,6 +34,10 @@
 </div>
 </form>
 <br>
+
+<form action="{{ route('user.delete', ['id' => $user->id]) }}" method="POST">
+    {{ csrf_field() }}
+    {{ method_field('DELETE') }}
 <div class="card bg-danger text-white">
     <div class="card-header">DELETE ACCOUNT</div>
     <div class="card-body" style="text-align:center">
@@ -43,7 +47,7 @@
         <button type="submit" class="btn btn-dark">DELETE ACCOUNT</button>
     </div>
   </div>
-
+</form>
 </div>
 
 

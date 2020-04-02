@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class PagesController extends Controller
 {
@@ -51,10 +54,12 @@ class PagesController extends Controller
     {
         $user = User::find($id);
 
-        $user->name = $user->name;
-        $user->email = $user->email;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = bcrypt( $request->password);
         $user->save();
-     Session::flash('success', 'You succesfully updated the category.');
+    // Session::flash('success', 'You succesfully updated the category.');
+
         return redirect()->back();
     }
 
@@ -73,5 +78,17 @@ class PagesController extends Controller
     {
         $user = User::find($id);
         return view('dashboard.create-countdown')->with('category', Category::all())->with('user',$user);
+    }
+
+
+    public function delete($id){
+
+        $user = User::findOrFail($id);
+        Auth::logout();
+
+        if ($user->delete()) {
+          return Redirect::route('index');
+        }
+
     }
 }
