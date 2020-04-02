@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Countdown;
 use App\Category;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -27,10 +28,15 @@ class CountdownController extends Controller
 
     public function ending(){
 
-        $countdown = Countdown::all();
+        $now = Carbon::now()->format('Y-m-d H:i:s');
+        $tom = Carbon::tomorrow()->format('Y-m-d H:i:s');
+        $week = Carbon::now()->addWeek()->format('Y-m-d H:i:s');
+       $countdown = Countdown::whereBetween('date', [$now, $week])
+       ->where('date','>' , $tom )
+       ->get();
 
-        return view('ending')->with('countdown', $countdown);
-       // return print_r(get_class_vars('CountdownController'));
+       return view('ending')->with('countdown', $countdown);
+
     }
 
     public function create(){
