@@ -1,15 +1,15 @@
 @extends('layouts.auth-app')
 
 @section('content')
-<div class="container" style="padding-top:115px; padding-bottom:50px; height:100%">
-<br>
-<div class="card bg-dark text-white">
-    <div class="card-body" style="text-align:center;"><h1>{{ strtoupper( Auth::user()->name) }}'S COUNTDOWN</h1></div>
-</div>
 
-<section class="page-section portfolio" id="popular">
-    <br><br><br>
+
+<section class="page-section portfolio" id="popular" >
+
     <div class="container">
+        <br><br>
+    <div class="card bg-dark text-white">
+        <div class="card-body" style="text-align:center;"><h1>{{ strtoupper( Auth::user()->name) }}'S COUNTDOWN</h1></div>
+    </div><br>
    <!-- Portfolio Grid Items -->
       <div class="row">
         @foreach ($countdown as $count)
@@ -31,7 +31,7 @@
                 <i class="fas fa-plus fa-3x"></i>
             </div>
             </div>
-            <img class="img-fluid" src="/storage/images/{{ $count->picture }}" alt="">
+            <img class="img-fluid" src="/storage/images/{{ $count->picture }}" alt="" style="width: 100%;height: 100%;object-fit: cover;">
           </div>
         </div>
 
@@ -59,7 +59,7 @@
                           <div class="divider-custom-line"></div>
                         </div>
                         <!-- Portfolio Modal - Image -->
-                        <img class="img-fluid rounded mb-5" src="/storage/images/{{ $count->picture }}" alt="">
+                        <img class="img-fluid rounded mb-5" src="/storage/images/{{ $count->picture }}" alt="" >
                         <!-- Portfolio Modal - Text -->
                         <hr style="border-top: 5px dashed rgb(26, 188, 156)">
                         <div data-countdown="{{ $count->date }} {{$count->time}}"  style="font-size:50px; font-weight: 900"></div>
@@ -80,8 +80,7 @@
         @endforeach
 
       </div>
-      <!-- /.row -->
-
+  <!-- /.row -->
   </section>
-</div>
+
 @endsection

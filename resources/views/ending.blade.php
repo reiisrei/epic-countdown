@@ -38,7 +38,7 @@
                 <i class="fas fa-plus fa-3x"></i>
             </div>
             </div>
-            <img class="img-fluid" src="/storage/images/{{ $count->picture }}" alt="">
+            <img class="img-fluid" src="/storage/images/{{ $count->picture }}" alt="" style="width: 100%;height: 100%;object-fit: cover;">
           </div>
         </div>
 
