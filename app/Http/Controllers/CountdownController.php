@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Countdown;
+use App\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -12,12 +13,14 @@ class CountdownController extends Controller
         $countdown = Countdown::paginate(6);
 
         return view('index')->with('countdown', $countdown);
+       // return print_r(get_class_vars('CountdownController'));
     }
 
     public function create(){
 
         return view('dashboard.create-countdown');
     }
+
     public  function store(Request $request){
 
         // $this->validate(request(), [
@@ -27,6 +30,7 @@ class CountdownController extends Controller
         // ]);
 
         $data = request()->all();
+        $category = Category::where('name','=',$data['category'])->first();
 
         if ($request->hasFile('picture')) {
             //Get filename with the extesion
@@ -51,6 +55,7 @@ class CountdownController extends Controller
         $countdown->date = $data['date'];
         $countdown->completion_text = $data['completion_text'];
         $countdown->unconfirmed_flag = $data['unconfirmed_flag'];
+        $countdown->categoryID = $category->order;
         $countdown->picture = $fileNameToStore;
 
         $countdown->save();

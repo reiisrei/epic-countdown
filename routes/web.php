@@ -12,15 +12,14 @@
 */
 include_once('custom/user_routes.php');
 
-
+include_once('custom/countdown_routes.php');
 
 
 Auth::routes();
 
-
-
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
+    Route::get('/admin/countdowns', 'CountdownController@index');
 });
 
 
@@ -28,7 +27,7 @@ Route::group(['prefix' => 'admin'], function () {
 // Route::get('epic/{epic}', 'CountdownController@show'); //show individual countdown
 
 // Route::get('new-epic', 'PagesController@CreateCountdown')->name('create.countdown'); //show create page countdown
-// Route::post('store-epic', 'CountdownController@store')->name('store.countdown');
+ //Route::post('store-epic', 'CountdownController@store')->name('store.countdown');
 // Route::get('epic/{epic}/edit', 'CountdownController@edit')->name('edit.countdown');
 // Route::post('epic/{epic}/update-epic', 'CountdownController@update')->name('update.countdown');
 // Route::get('epic/{epic}/delete', 'CountdownController@destroy')->name('delete.countdown');

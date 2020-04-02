@@ -48,6 +48,9 @@
                     <!-- Portfolio Modal - Image -->
                     <img class="img-fluid rounded mb-5" src="/storage/images/{{ $count->picture }}" alt="">
                     <!-- Portfolio Modal - Text -->
+                    <hr style="border-top: 5px dashed rgb(26, 188, 156)">
+                    <div data-countdown="{{ $count->date }} {{$count->time}}"  style="font-size:50px; font-weight: 900"></div>
+                    <hr style="border-top: 5px dashed rgb(26, 188, 156)">
                     <p class="mb-5">{{ $count->description }}</p>
                     <button class="btn btn-primary" href="#" data-dismiss="modal">
                       <i class="fas fa-times fa-fw"></i>

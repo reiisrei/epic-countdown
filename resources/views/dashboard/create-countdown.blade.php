@@ -20,6 +20,7 @@
         </ul>
     </div>
     @endif
+    <form action="/store-epic" method="POST" enctype="multipart/form-data">
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card card-default">
@@ -27,9 +28,9 @@
                 <div class="card-body">
 
                     <div class="form-group">
-                        <select class="form-control">
+                        <select class="form-control" name="category">
                           @foreach ($category as $categ)
-                            <option class="text-uppercase">{{ $categ->name }}</option>
+                            <option class="text-uppercase" value="{{ $categ->name }}">{{ $categ->name }}</option>
 
                           @endforeach
                         </select>
@@ -45,7 +46,7 @@
             <div class="card card-default">
                 <div class="card-header">Countdown Details</div>
                 <div class="card-body">
-                    <form action="/store-epic" method="POST" enctype="multipart/form-data">
+
                         @csrf
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Title" name="title">

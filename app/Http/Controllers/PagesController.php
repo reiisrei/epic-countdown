@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Category;
+use App\User;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -23,23 +24,54 @@ class PagesController extends Controller
      */
     public function Userdashboard()
     {
+
         return view('user-dashboard');
     }
 
-    public function MyAccount()
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function MyAccount($id)
     {
-        return view('dashboard.my-account');
+
+        $user = User::find($id);
+        return view('dashboard.my-account')->with('user',$user);
     }
-    public function MyWall()
+     /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
     {
-        return view('dashboard.my-wall');
+        $user = User::find($id);
+
+        $user->name = $user->name;
+        $user->email = $user->email;
+        $user->save();
+     Session::flash('success', 'You succesfully updated the category.');
+        return redirect()->back();
     }
-    public function MyCountdown()
+
+
+    public function MyWall($id)
     {
-        return view('dashboard.my-countdown');
+        $user = User::find($id);
+        return view('dashboard.my-wall')->with('user',$user);
     }
-    public function CreateCountdown()
+    public function MyCountdown($id)
     {
-        return view('dashboard.create-countdown')->with('category', Category::all());
+        $user = User::find($id);
+        return view('dashboard.my-countdown')->with('user',$user);
+    }
+    public function CreateCountdown($id)
+    {
+        $user = User::find($id);
+        return view('dashboard.create-countdown')->with('category', Category::all())->with('user',$user);
     }
 }

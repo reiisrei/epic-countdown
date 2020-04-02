@@ -15,7 +15,7 @@
             @if (!Request::is('/'))
 
             <li class="nav-item mx-0 " >
-                <a  class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('user.account') }}">My Account</a>
+                <a  class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('user.account', $user->id) }}">My Account</a>
             </li>
             <li class="nav-item mx-0 ">
                 <a  class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('user.wall') }}">My Wall</a>
@@ -53,7 +53,7 @@
                </a>
 
                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a href="{{ route('user.wall') }}" class="dropdown-item">DASHBOARD</a>
+                    <a href="{{ route('user.account', $user->id) }}" class="dropdown-item">DASHBOARD</a>
                     <hr>
                    <a class="dropdown-item " href="{{ route('logout') }}"
                       onclick="event.preventDefault();
