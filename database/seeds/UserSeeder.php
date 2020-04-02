@@ -1,9 +1,8 @@
 <?php
 
-use App\Countdown;
 use Illuminate\Database\Seeder;
-
-class CountdownSeeder extends Seeder
+use App\User;
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,6 +11,6 @@ class CountdownSeeder extends Seeder
      */
     public function run()
     {
-        // factory(Countdown::class, 10)->create();
+        factory(User::class, 1)->create();
     }
 }
