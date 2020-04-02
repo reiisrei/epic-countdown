@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Category;
+use App\Countdown;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -78,8 +79,12 @@ class PagesController extends Controller
     }
     public function MyCountdown($id)
     {
+        $countdown = Countdown::where('user_id', '=' , $id)->get();
+      //  dd($countdown);
         $user = User::find($id);
-        return view('dashboard.my-countdown')->with('user',$user);
+        return view('dashboard.my-countdown')
+        ->with('user',$user)
+        ->with('countdown', $countdown);
     }
     public function CreateCountdown($id)
     {
