@@ -69,8 +69,11 @@
                         </div>
 
                         <div class="form-group">
+                            <span>
+                                <h6>Completion Text</h6>
+                            </span>
                             <input type="text" class="form-control" placeholder="Completion Text"
-                                name="completion_text">
+                                name="completion_text" value="Go Watch now!">
                         </div>
                         <div class="form-group">
                             <span>

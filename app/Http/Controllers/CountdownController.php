@@ -24,11 +24,11 @@ class CountdownController extends Controller
 
     public  function store(Request $request){
 
-        // $this->validate(request(), [
+        $this->validate(request(), [
 
-        //     'name' => ' required|min:6|max:10',
-        //     'description' => 'required'
-        // ]);
+            'title' => ' required',
+            'description' => 'required',
+        ]);
 
         $data = request()->all();
         $category = Category::where('name','=',$data['category'])->first();
@@ -55,7 +55,11 @@ class CountdownController extends Controller
         $countdown->description = $data['description'];
         $countdown->date = $data['date'];
         $countdown->completion_text = $data['completion_text'];
-        $countdown->unconfirmed_flag = $data['unconfirmed_flag'];
+        if(isset($request->unconfirmed_flag)){
+            $countdown->unconfirmed_flag = $data['unconfirmed_flag'];
+        }else{
+            $countdown->unconfirmed_flag = 0;
+        }
         $countdown->categoryID = $category->order;
         $countdown->picture = $fileNameToStore;
         $countdown->user_id = Auth::user()->id;
