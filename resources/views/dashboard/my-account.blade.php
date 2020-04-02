@@ -15,13 +15,13 @@
             <div class="card-body">
                     @csrf
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Name" name="name">
+                        <input type="text" class="form-control" placeholder="Name" name="name" value="{{ $user->name }}">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Email" name="email">
+                        <input type="text" class="form-control" placeholder="Email" name="email" value="{{ $user->email }}">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Password" name="password">
+                        <input type="text" class="form-control" placeholder="Password" name="password" value="">
                     </div>
 
                     <div class="form-group text-center">
