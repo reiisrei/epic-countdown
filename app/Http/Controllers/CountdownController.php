@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Countdown;
 use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class CountdownController extends Controller
@@ -57,7 +58,7 @@ class CountdownController extends Controller
         $countdown->unconfirmed_flag = $data['unconfirmed_flag'];
         $countdown->categoryID = $category->order;
         $countdown->picture = $fileNameToStore;
-
+        $countdown->user_id = Auth::user()->id;
         $countdown->save();
 
         Session::flash('success', 'Post created successfully');
