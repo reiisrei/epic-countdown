@@ -15,18 +15,18 @@
         <ul class="navbar-nav ml-auto">
 
             <li class="nav-item mx-0 " >
-                <a  class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('user.account', $user->id) }}">My Account</a>
+                <a  class="nav-link py-3 px-0 px-lg-3 rounded {{Route::is('user.account') ? 'active' : ''}}" href="{{ route('user.account', $user->id) }}">My Account</a>
             </li>
             <li class="nav-item mx-0 ">
-                <a  class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('user.wall', $user->id) }}">My Wall</a>
+                <a  class="nav-link py-3 px-0 px-lg-3 rounded {{Route::is('user.wall') ? 'active' : ''}}" href="{{ route('user.wall', $user->id) }}">My Wall</a>
 
             </li>
             <li class="nav-item mx-0 ">
-                <a  class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('user.countdown', $user->id) }}">My Countdown</a>
+                <a  class="nav-link py-3 px-0 px-lg-3 rounded {{Route::is('user.countdown') ? 'active' : ''}}" href="{{ route('user.countdown', $user->id) }}">My Countdown</a>
 
             </li>
             <li class="nav-item mx-0 ">
-                <a  class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('create.countdown', $user->id) }}">Create Countdown</a>
+                <a  class="nav-link py-3 px-0 px-lg-3 rounded {{Route::is('create.countdown') ? 'active' : ''}}" href="{{ route('create.countdown', $user->id) }}">Create Countdown</a>
             </li>
 
 
