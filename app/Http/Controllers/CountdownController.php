@@ -14,7 +14,16 @@ class CountdownController extends Controller
 
         $countdown = Countdown::paginate(6);
 
-        return view('index')->with('countdown', $countdown);
+
+        $now = Carbon::now()->format('Y-m-d H:i:s');
+        $tom = Carbon::tomorrow()->format('Y-m-d H:i:s');
+        $week = Carbon::now()->addWeek()->format('Y-m-d H:i:s');
+       $ending = Countdown::whereBetween('date', [$now, $week])
+       ->where('date','>' , $tom )
+       ->get();
+
+
+        return view('index')->with('countdown', $countdown)->with('ending', $ending);
        // return print_r(get_class_vars('CountdownController'));
     }
 

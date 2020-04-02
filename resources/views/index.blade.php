@@ -53,7 +53,7 @@ Epic Countdown
       </div>
 
       <!-- Portfolio Grid Items -->
-      @include('inc.home-page-countdown')
+      @include('inc.ending-homepage-countdown')
       <div class="text-center mt-4">
         <a class="btn btn-xl btn-outline-dark" href="{{ route('ending') }}">
           <i class="fas fa-chevron-circle-down mr-2"></i>
