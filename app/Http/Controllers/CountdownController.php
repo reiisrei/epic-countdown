@@ -17,7 +17,7 @@ class CountdownController extends Controller
 
         $now = Carbon::now()->format('Y-m-d H:i:s');
         $tom = Carbon::tomorrow()->format('Y-m-d H:i:s');
-        $week = Carbon::now()->addWeek()->format('Y-m-d H:i:s');
+        $week = Carbon::now()->addWeek(22)->format('Y-m-d H:i:s');
        $ending = Countdown::whereBetween('date', [$now, $week])
        ->where('date','>' , $tom )
        ->get();
@@ -39,7 +39,7 @@ class CountdownController extends Controller
 
         $now = Carbon::now()->format('Y-m-d H:i:s');
         $tom = Carbon::tomorrow()->format('Y-m-d H:i:s');
-        $week = Carbon::now()->addWeek()->format('Y-m-d H:i:s');
+        $week = Carbon::now()->addWeek(22)->format('Y-m-d H:i:s');
        $countdown = Countdown::whereBetween('date', [$now, $week])
        ->where('date','>' , $tom )
        ->get();
