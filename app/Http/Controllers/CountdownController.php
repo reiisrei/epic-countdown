@@ -10,6 +10,33 @@ use Illuminate\Support\Facades\Session;
 
 class CountdownController extends Controller
 {
+        /**
+     * Favorite a particular post
+     *
+     * @param  Countdown $post
+     * @return Response
+     */
+    public function favoritePost(Countdown $countdown)
+    {
+        Auth::user()->favorites()->attach($countdown->id);
+
+        return back();
+    }
+
+    /**
+     * Unfavorite a particular post
+     *
+     * @param  Countdown $post
+     * @return Response
+     */
+    public function unFavoritePost(Countdown $countdown)
+    {
+        Auth::user()->favorites()->detach($countdown->id);
+
+        return back();
+    }
+
+
     public function index(){
 
         $countdown = Countdown::paginate(6);

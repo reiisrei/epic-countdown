@@ -20,6 +20,10 @@
         </div>
         <img class="img-fluid" src="/storage/images/{{ $count->picture }}" alt="" style="width: 100%;height: 100%;object-fit: cover;">
       </div>
+      <favorite
+      :countdown={{ $count->id }}
+      :favorited={{ $count->favorited() ? 'true' : 'false' }}
+  ></favorite>
     </div>
 
      <!-- Portfolio Modal {{ $count->id }} -->
@@ -56,6 +60,12 @@
                       <i class="fas fa-times fa-fw"></i>
                       Close Window
                     </button>
+                    @if (Auth::check())
+                    <favorite
+                        :countdown={{ $count->id }}
+                        :favorited={{ $count->favorited() ? 'true' : 'false' }}
+                    ></favorite>
+                  @endif
                   </div>
                 </div>
               </div>
